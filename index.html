@@ -14,7 +14,37 @@
       text-align: center;
     }
 
-    /* 🔥 Header styles */
+    /* Slider */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+    }
+
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 16s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { margin-left: 0; }
+      20% { margin-left: 0; }
+      25% { margin-left: -100%; }
+      45% { margin-left: -100%; }
+      50% { margin-left: -200%; }
+      70% { margin-left: -200%; }
+      75% { margin-left: -300%; }
+      95% { margin-left: -300%; }
+      100% { margin-left: 0; }
+    }
+
     header {
       background: linear-gradient(to right, #ff6f61, #ffcc70);
       color: white;
@@ -42,7 +72,6 @@
       margin: 5px 0 0;
     }
 
-    /* 🎁 Category buttons */
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -52,7 +81,9 @@
     }
 
     .category {
-      width: 220px;
+      flex: 1 1 calc(33.333% - 40px);
+      max-width: 220px;
+      min-width: 180px;
       padding: 20px;
       background: linear-gradient(135deg, #8e2de2, #4a00e0);
       color: white;
@@ -76,7 +107,6 @@
       margin-top: 30px;
     }
 
-    /* 📱 Responsive tweaks for mobile */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -92,18 +122,38 @@
       }
 
       .category {
-        width: 100%;
+        flex: 1 1 calc(45% - 20px);
+        max-width: 100%;
       }
 
       .container {
-        padding: 20px;
+        justify-content: center;
+      }
+
+      .slider {
+        height: 200px;
+      }
+
+      .slides img {
+        height: 200px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- 🎇 Header -->
+
+  <!-- 🔄 Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="happy.jpg" alt="Diwali Crackers 1">
+      <img src="child crackers.webp" alt="Kids Crackers">
+      <img src="sky.jpg" alt="Sky Fireworks">
+      <img src="images/slide4.jpg" alt="Night Festival">
+    </div>
+  </div>
+
+  <!-- 🎆 Header -->
   <header>
     <img src="Backbenchers.png" alt="BackBenchers Crackers Logo">
     <div>
@@ -112,7 +162,7 @@
     </div>
   </header>
 
-  <!-- 🧨 Categories -->
+  <!-- 🎁 Categories -->
   <div class="container">
     <a href="nattuvedi.html" class="category">👶 Child Crackers</a>
     <a href="night.html" class="category">🌙 Night Crackers</a>
@@ -124,6 +174,7 @@
   <footer>
     © 2025 BackBenchers Crackers | Made with ❤️ in Tamil Nadu
   </footer>
+
 </body>
 
 </html>
