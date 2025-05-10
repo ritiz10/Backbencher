@@ -27,9 +27,8 @@
         }
 
         .offer-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
             padding: 50px 20px;
         }
@@ -38,7 +37,6 @@
             background: #1a1a1a;
             border-radius: 15px;
             padding: 20px;
-            width: 260px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
         }
@@ -128,32 +126,32 @@
             font-size: 14px;
             color: #777;
         }
-        /* Add below media query at end of style tag */
-.offer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 50px 20px;
-}
 
-@media (max-width: 768px) {
-    .offer-grid {
-        grid-template-columns: repeat(3, 1fr); /* Ensures 3 items per row */
-    }
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .offer-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 items per row on mobile */
+            }
 
-    .offer {
-        width: 100%;
-        max-width: 300px;
-    }
-}
+            .offer {
+                max-width: 300px; /* Ensure items are not too wide on small screens */
+                width: 100%;
+            }
 
-@media (max-width: 480px) {
-    .offer-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
-    }
-}
+            header h1 {
+                font-size: 28px;
+            }
+        }
 
+        @media (max-width: 480px) {
+            .offer-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 items per row on very small screens */
+            }
 
+            header h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 
@@ -209,7 +207,6 @@
         <button class="btn" id="confirmPaymentBtn" style="display:none;" onclick="openWhatsApp()">Confirm
             Payment</button>
     </div>
-    
 
     <footer>
         © 2025 BackBenchers Crackers | Festival Vibes Only!
