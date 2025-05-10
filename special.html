@@ -128,6 +128,24 @@
             font-size: 14px;
             color: #777;
         }
+        /* Add below media query at end of style tag */
+@media (max-width: 768px) {
+    .offer-grid {
+        justify-content: center;
+    }
+
+    .offer {
+        width: calc(33.333% - 20px);
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .offer {
+        width: calc(50% - 20px);
+    }
+}
+
     </style>
 </head>
 
