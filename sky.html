@@ -27,9 +27,8 @@
         }
 
         .cracker-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
             padding: 40px 20px;
         }
@@ -38,7 +37,7 @@
             background-color: #1b262c;
             border-radius: 15px;
             padding: 20px;
-            width: 260px;
+            width: 100%;
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -121,6 +120,19 @@
             color: #bbb;
             margin-top: 50px;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .cracker-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cracker-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+            }
+        }
     </style>
 </head>
 
@@ -131,92 +143,90 @@
     </header>
 
     <div class="cracker-grid">
-    
         <div class="cracker">
             <img src="images/2fancy3pcs.jpg" alt="2 Fancy Fancy (3 Pcs)">
             <h3>2 Fancy Fancy (3 Pcs)</h3>
             <p>₹680</p>
             <button class="btn" onclick="addToCart('2 Fancy Fancy (3 Pcs)', 680)">Add to Cart</button>
         </div>
-    
+
         <div class="cracker">
             <img src="images/2fancy1pce.jpg" alt="2 Fancy (1 Pce)">
             <h3>2 Fancy (1 Pce)</h3>
             <p>₹240</p>
             <button class="btn" onclick="addToCart('2 Fancy (1 Pce)', 240)">Add to Cart</button>
         </div>
-    
+
         <div class="cracker">
             <img src="images/3fancy1pce.jpg" alt="3 Fancy (1 Pce)">
             <h3>3 Fancy (1 Pce)</h3>
             <p>₹640</p>
             <button class="btn" onclick="addToCart('3 Fancy (1 Pce)', 640)">Add to Cart</button>
         </div>
-    
+
         <div class="cracker">
             <img src="images/4fancy1pce.jpg" alt="4 Fancy (1 Pce)">
             <h3>4 Fancy (1 Pce)</h3>
             <p>₹800</p>
             <button class="btn" onclick="addToCart('4 Fancy (1 Pce)', 800)">Add to Cart</button>
         </div>
-    
+
         <div class="cracker">
             <img src="images/7shot5pcs.jpg" alt="7 Shot (5 Pcs)">
             <h3>7 Shot (5 Pcs)</h3>
             <p>₹400</p>
             <button class="btn" onclick="addToCart('7 Shot (5 Pcs)', 400)">Add to Cart</button>
         </div>
-    
+
         <div class="cracker">
             <img src="images/12shotrider.jpg" alt="12 Shot Rider (1 Pce)">
             <h3>12 Shot Rider (1 Pce)</h3>
             <p>₹300</p>
             <button class="btn" onclick="addToCart('12 Shot Rider (1 Pce)', 300)">Add to Cart</button>
         </div>
-            <div class="cracker">
-                <img src="images/12shotmulticolour.jpg" alt="12 Shot Multi Colour (1 Pce)">
-                <h3>12 Shot Multi Colour (1 Pce)</h3>
-                <p>₹450</p>
-                <button class="btn" onclick="addToCart('12 Shot Multi Colour (1 Pce)', 450)">Add to Cart</button>
-            </div>
-        
-            <div class="cracker">
-                <img src="images/12shotsizzling.jpg" alt="12 Shot Sizzling (1 Pce)">
-                <h3>12 Shot Sizzling (1 Pce)</h3>
-                <p>₹550</p>
-                <button class="btn" onclick="addToCart('12 Shot Sizzling (1 Pce)', 550)">Add to Cart</button>
-            </div>
-        
-            <div class="cracker">
-                <img src="images/15shotmulticolour.jpg" alt="15 Shot Muliti Colour (1 Pce)">
-                <h3>15 Shot Muliti Colour (1 Pce)</h3>
-                <p>₹600</p>
-                <button class="btn" onclick="addToCart('15 Shot Muliti Colour (1 Pce)', 600)">Add to Cart</button>
-            </div>
-        
-            <div class="cracker">
-                <img src="images/30shotmulticolour.jpg" alt="30 Shot Muliti Colour">
-                <h3>30 Shot Muliti Colour</h3>
-                <p>₹960</p>
-                <button class="btn" onclick="addToCart('30 Shot Muliti Colour', 960)">Add to Cart</button>
-            </div>
-        
-            <div class="cracker">
-                <img src="images/60shotmulticolour.jpg" alt="60 Shot Muliti Colour (1 Pce)">
-                <h3>60 Shot Muliti Colour (1 Pce)</h3>
-                <p>₹1920</p>
-                <button class="btn" onclick="addToCart('60 Shot Muliti Colour (1 Pce)', 1920)">Add to Cart</button>
-            </div>
-        
-            <div class="cracker">
-                <img src="images/120shotmulticolour.jpg" alt="120 Shot Muliti Colour (1 Pce)">
-                <h3>120 Shot Muliti Colour (1 Pce)</h3>
-                <p>₹3840</p>
-                <button class="btn" onclick="addToCart('120 Shot Muliti Colour (1 Pce)', 3840)">Add to Cart</button>
-            </div>
-        
+
+        <div class="cracker">
+            <img src="images/12shotmulticolour.jpg" alt="12 Shot Multi Colour (1 Pce)">
+            <h3>12 Shot Multi Colour (1 Pce)</h3>
+            <p>₹450</p>
+            <button class="btn" onclick="addToCart('12 Shot Multi Colour (1 Pce)', 450)">Add to Cart</button>
+        </div>
+
+        <div class="cracker">
+            <img src="images/12shotsizzling.jpg" alt="12 Shot Sizzling (1 Pce)">
+            <h3>12 Shot Sizzling (1 Pce)</h3>
+            <p>₹550</p>
+            <button class="btn" onclick="addToCart('12 Shot Sizzling (1 Pce)', 550)">Add to Cart</button>
+        </div>
+
+        <div class="cracker">
+            <img src="images/15shotmulticolour.jpg" alt="15 Shot Muliti Colour (1 Pce)">
+            <h3>15 Shot Muliti Colour (1 Pce)</h3>
+            <p>₹600</p>
+            <button class="btn" onclick="addToCart('15 Shot Muliti Colour (1 Pce)', 600)">Add to Cart</button>
+        </div>
+
+        <div class="cracker">
+            <img src="images/30shotmulticolour.jpg" alt="30 Shot Muliti Colour">
+            <h3>30 Shot Muliti Colour</h3>
+            <p>₹960</p>
+            <button class="btn" onclick="addToCart('30 Shot Muliti Colour', 960)">Add to Cart</button>
+        </div>
+
+        <div class="cracker">
+            <img src="images/60shotmulticolour.jpg" alt="60 Shot Muliti Colour (1 Pce)">
+            <h3>60 Shot Muliti Colour (1 Pce)</h3>
+            <p>₹1920</p>
+            <button class="btn" onclick="addToCart('60 Shot Muliti Colour (1 Pce)', 1920)">Add to Cart</button>
+        </div>
+
+        <div class="cracker">
+            <img src="images/120shotmulticolour.jpg" alt="120 Shot Muliti Colour (1 Pce)">
+            <h3>120 Shot Muliti Colour (1 Pce)</h3>
+            <p>₹3840</p>
+            <button class="btn" onclick="addToCart('120 Shot Muliti Colour (1 Pce)', 3840)">Add to Cart</button>
+        </div>
     </div>
-    
 
     <div id="cart-summary">
         <h3>🛒 Cart Summary</h3>
