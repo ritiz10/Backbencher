@@ -129,22 +129,30 @@
             color: #777;
         }
         /* Add below media query at end of style tag */
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 50px 20px;
+}
+
 @media (max-width: 768px) {
     .offer-grid {
-        justify-content: center;
+        grid-template-columns: repeat(3, 1fr); /* Ensures 3 items per row */
     }
 
     .offer {
-        width: calc(33.333% - 20px);
-        min-width: 100px;
+        width: 100%;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
-    .offer {
-        width: calc(50% - 20px);
+    .offer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
     }
 }
+
 
     </style>
 </head>
