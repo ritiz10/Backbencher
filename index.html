@@ -76,6 +76,11 @@
             color: white;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         header h1 {
@@ -109,7 +114,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, background 0.3s ease;
         }
-       
 
         .category:hover {
             transform: scale(1.07);
@@ -121,6 +125,41 @@
             padding: 20px;
             font-size: 14px;
             margin-top: 30px;
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            .category {
+                width: 90%;
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            .slider {
+                height: 200px;
+            }
+
+            .slides img {
+                height: 200px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -138,14 +177,13 @@
     </div>
 
     <!-- 🎆 Header -->
-    <header style="display: flex; align-items: center; gap: 15px;">
+    <header>
         <img src="Backbenchers.png" alt="BackBenchers Crackers Logo" style="height: 60px;">
         <div>
             <h1>🎇 BackBenchers Crackers 🎇 </h1>
             <p>Celebrate the Festival of Lights with Style & Joy!</p>
         </div>
     </header>
-    
 
     <!-- 🎁 Categories -->
     <div class="container">
