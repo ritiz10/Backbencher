@@ -34,38 +34,18 @@
         }
 
         @keyframes slide {
-            0% {
+            0%, 20% {
                 margin-left: 0;
             }
-
-            20% {
-                margin-left: 0;
-            }
-
-            25% {
+            25%, 45% {
                 margin-left: -100%;
             }
-
-            45% {
-                margin-left: -100%;
-            }
-
-            50% {
+            50%, 70% {
                 margin-left: -200%;
             }
-
-            70% {
-                margin-left: -200%;
-            }
-
-            75% {
+            75%, 95% {
                 margin-left: -300%;
             }
-
-            95% {
-                margin-left: -300%;
-            }
-
             100% {
                 margin-left: 0;
             }
@@ -78,9 +58,13 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
-            gap: 15px;
             justify-content: center;
+            gap: 15px;
             flex-wrap: wrap;
+        }
+
+        header img {
+            height: 60px;
         }
 
         header h1 {
@@ -98,7 +82,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
             padding: 40px 20px;
         }
 
@@ -127,7 +111,7 @@
             margin-top: 30px;
         }
 
-        /* 📱 Responsive Design */
+        /* 🔁 Responsive for Mobile */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -140,7 +124,7 @@
             }
 
             .category {
-                width: 90%;
+                width: 45%;
                 font-size: 18px;
                 padding: 20px;
             }
@@ -171,14 +155,14 @@
         <div class="slides">
             <img src="happy.jpg" alt="Diwali Crackers 1">
             <img src="child crackers.webp" alt="Kids Crackers">
-            <img src="sky.jpg" sizes="Set" alt="Sky Fireworks">
+            <img src="sky.jpg" alt="Sky Fireworks">
             <img src="images/slide4.jpg" alt="Night Festival">
         </div>
     </div>
 
     <!-- 🎆 Header -->
     <header>
-        <img src="Backbenchers.png" alt="BackBenchers Crackers Logo" style="height: 60px;">
+        <img src="Backbenchers.png" alt="BackBenchers Crackers Logo">
         <div>
             <h1>🎇 BackBenchers Crackers 🎇 </h1>
             <p>Celebrate the Festival of Lights with Style & Joy!</p>
@@ -191,7 +175,7 @@
         <a href="night.html" class="category">🌙 Night Crackers</a>
         <a href="sky.html" class="category">☁️ Sky Crackers</a>
         <a href="saravedi.html" class="category">💥 Athiradi vedi</a>
-        <a href="special.html" class="category">💥 Gift Boxes</a>
+        <a href="special.html" class="category">🎁 Gift Boxes</a>
     </div>
 
     <footer>
