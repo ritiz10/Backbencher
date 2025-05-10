@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Special Offers - BackBenchers Crackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to right, #1a1a2e, #16213e);
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+            background: #0f3460;
+            box-shadow: 0 0 20px #00bcd4;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #00f5d4;
+        }
+
+        .offer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .offer {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            width: 260px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .offer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+        }
+
+        .offer img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .offer h3 {
+            color: #00ffe0;
+            margin-top: 15px;
+        }
+
+        .offer p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #00ffd5;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #00d4ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        .btn:hover {
+            background-color: #00aaff;
+        }
+
+        #total {
+            margin: 30px auto;
+            font-size: 20px;
+            color: #00eaff;
+            background: #1a1a2e;
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        #cart-summary {
+            margin: 30px auto;
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        #cart-summary ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #qrSection {
+            display: none;
+            margin-top: 30px;
+            background: #0f3460;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background: #111;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🎁 Gift Boxes</h1>
+        <p>Best combos at exclusive festival prices!</p>
+    </header>
+
+    <div class="offer-grid">
+        <div class="offer">
+            <img src="images/combo1.jpg" alt="Combo 1">
+            <h3>26 Items</h3>
+            <p>Includes all types of crackers for family fun</p>
+            <p class="price">₹999</p>
+            <button class="btn" onclick="addToCart('26 Items', 999)">Add to Cart</button>
+        </div>
+        <div class="offer">
+            <img src="images/combo2.jpg" alt="Combo 2">
+            <h3>36 Items</h3>
+            <p>Colorful crackers with low noise for children</p>
+            <p class="price">₹499</p>
+            <button class="btn" onclick="addToCart('36 Items', 499)">Add to Cart</button>
+        </div>
+        <div class="offer">
+            <img src="images/combo3.jpg" alt="Combo 3">
+            <h3>42 Items</h3>
+            <p>Premium selection for grand celebrations</p>
+            <p class="price">₹1999</p>
+            <button class="btn" onclick="addToCart('42 Items', 1999)">Add to Cart</button>
+        </div>
+        <div class="offer">
+            <img src="images/combo4.jpg" alt="Combo 3">
+            <h3>50 Items</h3>
+            <p>Premium selection for grand celebrations</p>
+            <p class="price">₹1999</p>
+            <button class="btn" onclick="addToCart('50 Items', 2499)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="cart-summary">
+        <h3>Cart Summary</h3>
+        <ul id="cart-items"></ul>
+        <div id="total">Total: ₹0</div>
+        <button class="btn" onclick="placeOrder()">Place Order</button>
+        <button class="btn" onclick="showQRAndNotify()">Pay Now</button>
+    </div>
+
+    <div id="qrSection">
+        <h2>Scan to Pay via UPI</h2>
+        <canvas id="qr"></canvas>
+        <p><a id="upiLink" href="#" target="_blank" style="color:#00eaff;">Open in UPI App</a></p>
+        <button class="btn" id="confirmPaymentBtn" style="display:none;" onclick="openWhatsApp()">Confirm
+            Payment</button>
+    </div>
+    
+
+    <footer>
+        © 2025 BackBenchers Crackers | Festival Vibes Only!
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

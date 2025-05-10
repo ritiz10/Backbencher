@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Child Crackers - BackBenchers Crackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #23395d;
+            box-shadow: 0 0 20px #ffcc00;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #ffdd57;
+        }
+
+        .cracker-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .cracker {
+            background-color: #2b2d42;
+            border-radius: 15px;
+            padding: 20px;
+            width: 260px;
+            box-shadow: 0 0 15px rgba(255, 220, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cracker:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 220, 0, 0.5);
+        }
+
+        .cracker img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cracker h3 {
+            color: #ffe066;
+            margin-top: 10px;
+        }
+
+        .cracker p {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #fce94f;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #f7c600;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: #e0b000;
+        }
+
+        #cart-summary {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #cart-summary ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        #total {
+            font-size: 20px;
+            color: #ffee00;
+            margin: 10px 0;
+        }
+
+        #qrSection {
+            display: none;
+            margin-top: 30px;
+            background: #1b1f3a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 15px;
+            color: #aaa;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🎉 Child Crackers</h1>
+        <p>Safe, fun, and colorful crackers for kids!</p>
+    </header>
+
+    
+        <div class="cracker-grid">
+            <div class="cracker">
+                <img src="images/hitechpencil.jpg" alt="12 Hi Tech Pencil (10 Pcs)">
+                <h3>12 Hi Tech Pencil (10 Pcs)</h3>
+                <p>High-tech pencils with stunning effects.</p>
+                <p class="price">₹180</p>
+                <button class="btn" onclick="addToCart('12 Hi Tech Pencil (10 Pcs)', 180)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/twittertorch.jpg" alt="Twitter Torch (2 Pcs)">
+                <h3>Twitter Torch (2 Pcs)</h3>
+                <p>A torch with a stunning light show effect.</p>
+                <p class="price">₹360</p>
+                <button class="btn" onclick="addToCart('Twitter Torch (2 Pcs)', 360)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/popcornpencil.jpg" alt="Pop Corn Pencil (5 Pcs)">
+                <h3>Pop Corn Pencil (5 Pcs)</h3>
+                <p>Colorful popcorn pencils for fun celebrations.</p>
+                <p class="price">₹500</p>
+                <button class="btn" onclick="addToCart('Pop Corn Pencil (5 Pcs)', 500)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/waterqueenpencil.jpg" alt="Water Queen Pencil (5 Pcs)">
+                <h3>Water Queen Pencil (5 Pcs)</h3>
+                <p>Special pencils with water-based effects.</p>
+                <p class="price">₹500</p>
+                <button class="btn" onclick="addToCart('Water Queen Pencil (5 Pcs)', 500)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/karnacooltorch.jpg" alt="Karna Cooling Torch (2 Pcs)">
+                <h3>Karna Cooling Torch (2 Pcs)</h3>
+                <p>Chilling light effects for a cool show.</p>
+                <p class="price">₹360</p>
+                <button class="btn" onclick="addToCart('Karna Cooling Torch (2 Pcs)', 360)">Add to Cart</button>
+            </div>
+                <div class="cracker">
+                    <img src="images/smallmatchbox.jpg" alt="Small Match Box (10 Pcs)">
+                    <h3>Small Match Box (10 Pcs)</h3>
+                    <p>Perfect for small celebrations with a big spark!</p>
+                    <p class="price">₹45</p>
+                    <button class="btn" onclick="addToCart('Small Match Box (10 Pcs)', 45)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/deluxe3in1matchbox.jpg" alt="Deluxe 3 in 1 Match Box (10 Pcs)">
+                    <h3>Deluxe 3 in 1 Match Box (10 Pcs)</h3>
+                    <p>Multipurpose match box with three exciting effects.</p>
+                    <p class="price">₹180</p>
+                    <button class="btn" onclick="addToCart('Deluxe 3 in 1 Match Box (10 Pcs)', 150)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/lamba3in1matchbox.jpg" alt="Lamba 3 in 1 Match Box (10 Pcs)">
+                    <h3>Lamba 3 in 1 Match Box (10 Pcs)</h3>
+                    <p>Long-lasting and multi-functional match box for grand shows.</p>
+                    <p class="price">₹360</p>
+                    <button class="btn" onclick="addToCart('Lamba 3 in 1 Match Box (10 Pcs)', 360)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/5in1shower.jpg" alt="5 in 1 Shower (5 Pce)">
+                    <h3>5 in 1 Shower (5 Pce)</h3>
+                    <p>Five different effects in one amazing shower!</p>
+                    <p class="price">₹260</p>
+                    <button class="btn" onclick="addToCart('5 in 1 Shower (5 Pce)', 260)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/kitkatchitput.jpg" alt="Kit Kat (Chit Put)">
+                    <h3>Kit Kat (Chit Put)</h3>
+                    <p>Surprise your friends with this fun cracker!</p>
+                    <p class="price">₹50</p>
+                    <button class="btn" onclick="addToCart('Kit Kat (Chit Put)', 50)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/smoke.jpg" alt="Smoke (3 Pcs)">
+                    <h3>Smoke (3 Pcs)</h3>
+                    <p>Creates a smoky effect for dramatic flair.</p>
+                    <p class="price">₹400</p>
+                    <button class="btn" onclick="addToCart('Smoke (3 Pcs)', 400)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/butterfly.jpg" alt="Butterfly (5 Pcs)">
+                    <h3>Butterfly (5 Pcs)</h3>
+                    <p>Charming butterfly-shaped crackers for any occasion.</p>
+                    <p class="price">₹110</p>
+                    <button class="btn" onclick="addToCart('Butterfly (5 Pcs)', 110)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/moneybank.jpg" alt="Money Bank (3 Pcs)">
+                    <h3>Money Bank (3 Pcs)</h3>
+                    <p>Fun crackers that resemble money bags!</p>
+                    <p class="price">₹490</p>
+                    <button class="btn" onclick="addToCart('Money Bank (3 Pcs)', 490)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/watershowerqueen.jpg" alt="6 Water Shower Queen (1 Pcs)">
+                    <h3>6 Water Shower Queen (1 Pcs)</h3>
+                    <p>A stunning water shower effect for a royal display.</p>
+                    <p class="price">₹480</p>
+                    <button class="btn" onclick="addToCart('6 Water Shower Queen (1 Pcs)', 480)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/pistol5g.jpg" alt="Pistol 5g (Big) (2 Pcs)">
+                    <h3>Pistol 5g (Big) (2 Pcs)</h3>
+                    <p>Big bang effect with this pistol-shaped cracker.</p>
+                    <p class="price">₹480</p>
+                    <button class="btn" onclick="addToCart('Pistol 5g (Big) (2 Pcs)', 480)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/megashiren.jpg" alt="Mega Siren (3 Pcs)">
+                    <h3>Mega Siren (3 Pcs)</h3>
+                    <p>Produce a loud siren sound to start the celebration!</p>
+                    <p class="price">₹480</p>
+                    <button class="btn" onclick="addToCart('Mega Siren (3 Pcs)', 480)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/blackmoney.jpg" alt="Black Money (Magic Show) (5 Pcs)">
+                    <h3>Black Money (Magic Show) (5 Pcs)</h3>
+                    <p>A magical show of lights and effects!</p>
+                    <p class="price">₹460</p>
+                    <button class="btn" onclick="addToCart('Black Money (Magic Show) (5 Pcs)', 460)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/bambaram.jpg" alt="Bambaram">
+                    <h3>Bambaram</h3>
+                    <p>A spinning cracker for non-stop fun.</p>
+                    <p class="price">₹240</p>
+                    <button class="btn" onclick="addToCart('Bambaram', 240)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/photovflash.jpg" alt="Photo Flash (5 Pcs)">
+                    <h3>Photo Flash (5 Pcs)</h3>
+                    <p>Illuminate your celebrations with bright flashes.</p>
+                    <p class="price">₹120</p>
+                    <button class="btn" onclick="addToCart('Photo Flash (5 Pcs)', 120)">Add to Cart</button>
+                </div>
+            
+                <div class="cracker">
+                    <img src="images/helicopter.jpg" alt="Helicopter (5 Pcs)">
+                    <h3>Helicopter (5 Pcs)</h3>
+                    <p>Helicopter-like crackers that soar into the sky!</p>
+                    <p class="price">₹280</p>
+                    <button class="btn" onclick="addToCart('Helicopter (5 Pcs)', 280)">Add to Cart</button>
+                </div>
+                    <div class="cracker">
+                        <img src="images/tinbearfountain.jpg" alt="Tin Bear Fountain">
+                        <h3>Tin Bear Fountain</h3>
+                        <p>A colorful fountain that will light up the sky with joy!</p>
+                        <p class="price">₹300</p>
+                        <button class="btn" onclick="addToCart('Tin Bear Fountain', 300)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/chotefancy.jpg" alt="Chote Fancy (1 Pce)">
+                        <h3>Chote Fancy (1 Pce)</h3>
+                        <p>A small, but impressive cracker for all ages.</p>
+                        <p class="price">₹140</p>
+                        <button class="btn" onclick="addToCart('Chote Fancy (1 Pce)', 140)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/padapeacock.jpg" alt="Pada Peacock (1 Pce)">
+                        <h3>Pada Peacock (1 Pce)</h3>
+                        <p>Graceful and colorful like a peacock, perfect for celebrations!</p>
+                        <p class="price">₹840</p>
+                        <button class="btn" onclick="addToCart('Pada Peacock (1 Pce)', 840)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/rollcap.jpg" alt="Roll Cap">
+                        <h3>Roll Cap</h3>
+                        <p>Classic roll cap crackers for fun and surprise!</p>
+                        <p class="price">₹200</p>
+                        <button class="btn" onclick="addToCart('Roll Cap', 200)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/90watdigitalwala.jpg" alt="90 Wats (Digital Wala) (3 Pcs)">
+                        <h3>90 Wats (Digital Wala) (3 Pcs)</h3>
+                        <p>A digital cracker with a strong and consistent sound.</p>
+                        <p class="price">₹260</p>
+                        <button class="btn" onclick="addToCart('90 Wats (Digital Wala) (3 Pcs)', 260)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/gangajamuna.jpg" alt="Ganga Jamuna (5 Pcs)">
+                        <h3>Ganga Jamuna (5 Pcs)</h3>
+                        <p>A beautiful cracker combination with a stunning visual effect.</p>
+                        <p class="price">₹130</p>
+                        <button class="btn" onclick="addToCart('Ganga Jamuna (5 Pcs)', 130)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/peacockfeather.jpg" alt="Peacock Feather (5 Pcs)">
+                        <h3>Peacock Feather (5 Pcs)</h3>
+                        <p>Elegant and colorful, resembling a peacock's feather.</p>
+                        <p class="price">₹280</p>
+                        <button class="btn" onclick="addToCart('Peacock Feather (5 Pcs)', 280)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/magicalpeacock.jpg" alt="Magical Peacock (1 Pce)">
+                        <h3>Magical Peacock (1 Pce)</h3>
+                        <p>A mesmerizing cracker that mimics the beauty of a peacock.</p>
+                        <p class="price">₹480</p>
+                        <button class="btn" onclick="addToCart('Magical Peacock (1 Pce)', 480)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/pentaskyshot.jpg" alt="Penta Sky Shot (5 Pcs)">
+                        <h3>Penta Sky Shot (5 Pcs)</h3>
+                        <p>High-flying shots that light up the sky in multiple colors.</p>
+                        <p class="price">₹400</p>
+                        <button class="btn" onclick="addToCart('Penta Sky Shot (5 Pcs)', 400)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/peacock.jpg" alt="Peacock">
+                        <h3>Peacock</h3>
+                        <p>Beautiful peacock-themed cracker for vibrant celebrations.</p>
+                        <p class="price">₹240</p>
+                        <button class="btn" onclick="addToCart('Peacock', 240)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/drone.jpg" alt="Drone (5 Pcs)">
+                        <h3>Drone (5 Pcs)</h3>
+                        <p>Fly high with these fun drone crackers!</p>
+                        <p class="price">₹360</p>
+                        <button class="btn" onclick="addToCart('Drone (5 Pcs)', 360)">Add to Cart</button>
+                    </div>
+                    <div class="cracker">
+                        <img src="images/spider.jpg" alt="Spider (5 Pcs)">
+                        <h3>Spider (5 Pcs)</h3>
+                        <p>Watch out for these spooky spider crackers that light up the night!</p>
+                        <p class="price">₹340</p>
+                        <button class="btn" onclick="addToCart('Spider (5 Pcs)', 340)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/mumbai-beauty.jpg" alt="4.5&quot; Muumbai Beauty (1 Pce)">
+                        <h3>4.5&quot; Muumbai Beauty (1 Pce)</h3>
+                        <p>A beautiful and vibrant cracker that will steal the show.</p>
+                        <p class="price">₹300</p>
+                        <button class="btn" onclick="addToCart('4.5 Muumbai Beauty (1 Pce)', 300)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/lollypop.jpg" alt="Lolly Pop (5 Pcs)">
+                        <h3>Lolly Pop (5 Pcs)</h3>
+                        <p>A fun and colorful cracker that will light up any party!</p>
+                        <p class="price">₹600</p>
+                        <button class="btn" onclick="addToCart('Lolly Pop (5 Pcs)', 600)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/electricstone.jpg" alt="Electric Stone">
+                        <h3>Electric Stone</h3>
+                        <p>A dazzling cracker that creates a stunning electric effect.</p>
+                        <p class="price">₹24</p>
+                        <button class="btn" onclick="addToCart('Electric Stone', 24)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/shinchan.jpg" alt="Shinchan (5 Pcs)">
+                        <h3>Shinchan (5 Pcs)</h3>
+                        <p>Bring the fun of Shinchan to your celebrations with these cute crackers.</p>
+                        <p class="price">₹220</p>
+                        <button class="btn" onclick="addToCart('Shinchan (5 Pcs)', 220)">Add to Cart</button>
+                    </div>
+                
+                    <div class="cracker">
+                        <img src="images/snakeserpentbig.jpg" alt="Snake Serpent Big (10 Pcs)">
+                        <h3>Snake Serpent Big (10 Pcs)</h3>
+                        <p>Watch the big snake cracker surprise you with its explosive effect!</p>
+                        <p class="price">₹180</p>
+                        <button class="btn" onclick="addToCart('Snake Serpent Big (10 Pcs)', 180)">Add to Cart</button>
+                    </div>
+                    <div class="cracker">
+                        <img src="images/zeeboombaa.jpg" alt="Zee Boom Baa">
+                        <h3>Zee Boom Baa</h3>
+                        <p>Get ready for an explosive blast with this powerful cracker!</p>
+                        <p class="price">₹20</p>
+                        <button class="btn" onclick="addToCart('Zee Boom Baa', 20)">Add to Cart</button>
+                    </div>
+        </div>
+        
+
+
+    <div id="cart-summary">
+        <h3>🛍️ Cart Summary</h3>
+        <ul id="cart-items"></ul>
+        <div id="total">Total: ₹0</div>
+        <button class="btn" onclick="placeOrder()">Place Order</button>
+        <button class="btn" onclick="showQRAndNotify()">Pay Now</button>
+    </div>
+
+    <div id="qrSection">
+        <h2>Scan to Pay</h2>
+        <canvas id="qr"></canvas>
+        <p><a id="upiLink" href="#" target="_blank" style="color:#ffeb3b;">Open in UPI App</a></p>
+        <button class="btn" id="confirmPaymentBtn" style="display:none;" onclick="openWhatsApp()">Confirm
+            Payment</button>
+    </div>
+
+    <footer>
+        © 2025 BackBenchers Crackers | Fun begins with a sparkle!
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

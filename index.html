@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BackBenchers Crackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Baloo 2', cursive;
+            background: #fff8e1;
+            text-align: center;
+        }
+
+        /* Slider styles */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            animation: slide 16s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% {
+                margin-left: 0;
+            }
+
+            20% {
+                margin-left: 0;
+            }
+
+            25% {
+                margin-left: -100%;
+            }
+
+            45% {
+                margin-left: -100%;
+            }
+
+            50% {
+                margin-left: -200%;
+            }
+
+            70% {
+                margin-left: -200%;
+            }
+
+            75% {
+                margin-left: -300%;
+            }
+
+            95% {
+                margin-left: -300%;
+            }
+
+            100% {
+                margin-left: 0;
+            }
+        }
+
+        header {
+            background: linear-gradient(to right, #ff6f61, #ffcc70);
+            color: white;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 5px #00000050;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .category {
+            width: 260px;
+            padding: 30px;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+       
+
+        .category:hover {
+            transform: scale(1.07);
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        footer {
+            background: #fce4ec;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔄 4-slide banner -->
+    <div class="slider">
+        <div class="slides">
+            <img src="happy.jpg" alt="Diwali Crackers 1">
+            <img src="child crackers.webp" alt="Kids Crackers">
+            <img src="sky.jpg" sizes="Set" alt="Sky Fireworks">
+            <img src="images/slide4.jpg" alt="Night Festival">
+        </div>
+    </div>
+
+    <!-- 🎆 Header -->
+    <header style="display: flex; align-items: center; gap: 15px;">
+        <img src="Backbenchers.png" alt="BackBenchers Crackers Logo" style="height: 60px;">
+        <div>
+            <h1>🎇 BackBenchers Crackers 🎇 </h1>
+            <p>Celebrate the Festival of Lights with Style & Joy!</p>
+        </div>
+    </header>
+    
+
+    <!-- 🎁 Categories -->
+    <div class="container">
+        <a href="nattuvedi.html" class="category">👶 Child Crackers</a>
+        <a href="night.html" class="category">🌙 Night Crackers</a>
+        <a href="sky.html" class="category">☁️ Sky Crackers</a>
+        <a href="saravedi.html" class="category">💥 Athiradi vedi</a>
+        <a href="special.html" class="category">💥 Gift Boxes</a>
+    </div>
+
+    <footer>
+        © 2025 BackBenchers Crackers | Made with ❤️ in Tamil Nadu
+    </footer>
+
+</body>
+
+</html>

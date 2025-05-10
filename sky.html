@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sky Crackers - BackBenchers Crackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #112d4e;
+            box-shadow: 0 0 20px #00d4ff;
+        }
+
+        header h1 {
+            font-size: 44px;
+            color: #00ffe0;
+        }
+
+        .cracker-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .cracker {
+            background-color: #1b262c;
+            border-radius: 15px;
+            padding: 20px;
+            width: 260px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cracker:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+        }
+
+        .cracker img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cracker h3 {
+            color: #00ffe0;
+            margin-top: 10px;
+        }
+
+        .cracker p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #00e6ff;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: #0097a7;
+        }
+
+        #cart-summary {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #cart-summary ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        #total {
+            font-size: 20px;
+            color: #00f7ff;
+            margin: 10px 0;
+        }
+
+        #qrSection {
+            display: none;
+            margin-top: 30px;
+            background: #0f3460;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background-color: #0d1b2a;
+            text-align: center;
+            padding: 15px;
+            color: #bbb;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🎇 Sky Crackers</h1>
+        <p>Watch the sky light up with our dazzling collection</p>
+    </header>
+
+    <div class="cracker-grid">
+    
+        <div class="cracker">
+            <img src="images/2fancy3pcs.jpg" alt="2 Fancy Fancy (3 Pcs)">
+            <h3>2 Fancy Fancy (3 Pcs)</h3>
+            <p>₹680</p>
+            <button class="btn" onclick="addToCart('2 Fancy Fancy (3 Pcs)', 680)">Add to Cart</button>
+        </div>
+    
+        <div class="cracker">
+            <img src="images/2fancy1pce.jpg" alt="2 Fancy (1 Pce)">
+            <h3>2 Fancy (1 Pce)</h3>
+            <p>₹240</p>
+            <button class="btn" onclick="addToCart('2 Fancy (1 Pce)', 240)">Add to Cart</button>
+        </div>
+    
+        <div class="cracker">
+            <img src="images/3fancy1pce.jpg" alt="3 Fancy (1 Pce)">
+            <h3>3 Fancy (1 Pce)</h3>
+            <p>₹640</p>
+            <button class="btn" onclick="addToCart('3 Fancy (1 Pce)', 640)">Add to Cart</button>
+        </div>
+    
+        <div class="cracker">
+            <img src="images/4fancy1pce.jpg" alt="4 Fancy (1 Pce)">
+            <h3>4 Fancy (1 Pce)</h3>
+            <p>₹800</p>
+            <button class="btn" onclick="addToCart('4 Fancy (1 Pce)', 800)">Add to Cart</button>
+        </div>
+    
+        <div class="cracker">
+            <img src="images/7shot5pcs.jpg" alt="7 Shot (5 Pcs)">
+            <h3>7 Shot (5 Pcs)</h3>
+            <p>₹400</p>
+            <button class="btn" onclick="addToCart('7 Shot (5 Pcs)', 400)">Add to Cart</button>
+        </div>
+    
+        <div class="cracker">
+            <img src="images/12shotrider.jpg" alt="12 Shot Rider (1 Pce)">
+            <h3>12 Shot Rider (1 Pce)</h3>
+            <p>₹300</p>
+            <button class="btn" onclick="addToCart('12 Shot Rider (1 Pce)', 300)">Add to Cart</button>
+        </div>
+            <div class="cracker">
+                <img src="images/12shotmulticolour.jpg" alt="12 Shot Multi Colour (1 Pce)">
+                <h3>12 Shot Multi Colour (1 Pce)</h3>
+                <p>₹450</p>
+                <button class="btn" onclick="addToCart('12 Shot Multi Colour (1 Pce)', 450)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/12shotsizzling.jpg" alt="12 Shot Sizzling (1 Pce)">
+                <h3>12 Shot Sizzling (1 Pce)</h3>
+                <p>₹550</p>
+                <button class="btn" onclick="addToCart('12 Shot Sizzling (1 Pce)', 550)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/15shotmulticolour.jpg" alt="15 Shot Muliti Colour (1 Pce)">
+                <h3>15 Shot Muliti Colour (1 Pce)</h3>
+                <p>₹600</p>
+                <button class="btn" onclick="addToCart('15 Shot Muliti Colour (1 Pce)', 600)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/30shotmulticolour.jpg" alt="30 Shot Muliti Colour">
+                <h3>30 Shot Muliti Colour</h3>
+                <p>₹960</p>
+                <button class="btn" onclick="addToCart('30 Shot Muliti Colour', 960)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/60shotmulticolour.jpg" alt="60 Shot Muliti Colour (1 Pce)">
+                <h3>60 Shot Muliti Colour (1 Pce)</h3>
+                <p>₹1920</p>
+                <button class="btn" onclick="addToCart('60 Shot Muliti Colour (1 Pce)', 1920)">Add to Cart</button>
+            </div>
+        
+            <div class="cracker">
+                <img src="images/120shotmulticolour.jpg" alt="120 Shot Muliti Colour (1 Pce)">
+                <h3>120 Shot Muliti Colour (1 Pce)</h3>
+                <p>₹3840</p>
+                <button class="btn" onclick="addToCart('120 Shot Muliti Colour (1 Pce)', 3840)">Add to Cart</button>
+            </div>
+        
+    </div>
+    
+
+    <div id="cart-summary">
+        <h3>🛒 Cart Summary</h3>
+        <ul id="cart-items"></ul>
+        <div id="total">Total: ₹0</div>
+        <button class="btn" onclick="placeOrder()">Place Order</button>
+        <button class="btn" onclick="showQRAndNotify()">Pay Now</button>
+    </div>
+
+    <div id="qrSection">
+        <h2>Scan to Pay</h2>
+        <canvas id="qr"></canvas>
+        <p><a id="upiLink" href="#" target="_blank" style="color:#00eaff;">Open in UPI App</a></p>
+        <button class="btn" id="confirmPaymentBtn" style="display:none;" onclick="openWhatsApp()">Confirm
+            Payment</button>
+    </div>
+
+    <footer>
+        © 2025 BackBenchers Crackers | Light Up the Skies!
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

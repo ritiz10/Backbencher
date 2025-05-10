@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Night Crackers - BackBenchers Crackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #0d0d0d, #1c1c1c);
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+            background: linear-gradient(to right, #000000, #440022);
+            box-shadow: 0 0 20px #ff0080;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #ff66cc;
+            text-shadow: 0 0 10px #ff00cc;
+        }
+
+        .intro {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ccc;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .product {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            width: 260px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 150, 0.2);
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 100, 200, 0.7);
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            color: #ffccff;
+            margin-top: 15px;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #ff66cc;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #ff66cc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        .btn:hover {
+            background-color: #ff3385;
+        }
+
+        #total {
+            margin: 30px auto;
+            font-size: 20px;
+            color: #ff66cc;
+            background: #1a1a2e;
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            box-shadow: 0 0 10px rgba(255, 0, 150, 0.3);
+        }
+
+        #cart-summary {
+            margin: 30px auto;
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        #cart-summary ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #qrSection {
+            display: none;
+            margin-top: 30px;
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255, 0, 150, 0.3);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background: #111;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🌙 Night Crackers</h1>
+        <p class="intro">Brighten the night with dazzling lights & thunder!</p>
+    </header>
+
+    <div class="product-grid">
+        <div class="product">
+            <img src="images/night1.jpg" alt="Sky Shot">
+            <h3>7 Cm Electric Sparklers (10 Pcs)
+            </h3>
+            <p>Massive burst with multi-color trails</p>
+            <p class="price">₹24</p>
+            <button class="btn" onclick="addToCart('7 Cm Electric Sparklers (10 Pcs)', 24)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night2.jpg" alt="Rocket">
+            <h3>7 Cm Crackling Sparklers (10 Pcs)
+            </h3>
+            <p>10-piece power rocket combo</p>
+            <p class="price">₹28</p>
+            <button class="btn" onclick="addToCart('7 Cm Crackling Sparklers (10 Pcs)', 28)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night3.jpg" alt="Big Bomb">
+            <h3>7 Cm Green Sparklers(10 Pcs)</h3>
+            <p>High-impact traditional crackers</p>
+            <p class="price">₹30</p>
+            <button class="btn" onclick="addToCart('7 Cm Green Sparklers(10 Pcs)', 30)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>7 Cm Red Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹34</p>
+            <button class="btn" onclick="addToCart('7 Cm Red Sparklers(10 Pcs)', 34)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>10 Cm Electric Sparklers(10 Pcs) 
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹600</p>
+            <button class="btn" onclick="addToCart('10 Cm Electric Sparklers(10 Pcs)', 600)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>10 Cm Crackling Sparklers(10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹44</p>
+            <button class="btn" onclick="addToCart('10 Cm Crackling Sparklers(10 Pcs)', 44)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>10 Cm Green Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹50</p>
+            <button class="btn" onclick="addToCart('10 Cm Green Sparklers(10 Pcs)', 50)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>10 Cm Red Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹52</p>
+            <button class="btn" onclick="addToCart('10 Cm Red Sparklers(10 Pcs)', 52)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>15 Cm Electric Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹56</p>
+            <button class="btn" onclick="addToCart('15 Cm Electric Sparklers(10 Pcs)', 56)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>15 Cm Crackling Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹100</p>
+            <button class="btn" onclick="addToCart('15 Cm Crackling Sparklers(10 Pcs)', 100)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>15 Cm Green Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹110</p>
+            <button class="btn" onclick="addToCart('15 Cm Green Sparklers(10 Pcs)', 110)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>15 Cm Red Sparklers (10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹115</p>
+            <button class="btn" onclick="addToCart('15 Cm Red Sparklers (10 Pcs)', 115)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>30 Cm Electric Sparklers(10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('30 Cm Electric Sparklers(10 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>30 Cm Crackling Sparklers(10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹100</p>
+            <button class="btn" onclick="addToCart('30 Cm Crackling Sparklers(10 Pcs)', 100)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>30Cm Green Sparklers (10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹110</p>
+            <button class="btn" onclick="addToCart('30Cm Green Sparklers (10 Pcs)', 110)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>30 Cm Red Sparklers(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹115</p>
+            <button class="btn" onclick="addToCart('30 Cm Red Sparklers(10 Pcs)', 115)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>50 Cm Electric Sparklers(10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('50 Cm Electric Sparklers(10 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>50 Cm Crackling Sparklers (10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹420</p>
+            <button class="btn" onclick="addToCart('50 Cm Crackling Sparklers (10 Pcs)', 420)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Rotating Sparklers</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹480</p>
+            <button class="btn" onclick="addToCart('Rotating Sparklers', 480)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Disco Wheel (5 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹100</p>
+            <button class="btn" onclick="addToCart('Disco Wheel (5 Pcs)', 100)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>4x4 Wheel (5 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹360</p>
+            <button class="btn" onclick="addToCart('4x4 Wheel (5 Pcs)', 360)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Lotus Wheel (5 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹440</p>
+            <button class="btn" onclick="addToCart('Lotus Wheel (5 Pcs)', 440)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Ground Chakkar Big(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹100</p>
+            <button class="btn" onclick="addToCart('Ground Chakkar Big(10 Pcs)', 100)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Ground Chakkar Special(10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹180</p>
+            <button class="btn" onclick="addToCart('Ground Chakkar Special(10 Pcs)', 180)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Ground Chakkar Deluxe (10 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹360</p>
+            <button class="btn" onclick="addToCart('Ground Chakkar Deluxe (10 Pcs)', 360)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>900 CC Wheel (5 Pcs)</h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹300</p>
+            <button class="btn" onclick="addToCart('900 CC Wheel (5 Pcs)', 300)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Small(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('Flower Pots Small(10 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Big(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹200</p>
+            <button class="btn" onclick="addToCart('Flower Pots Big(10 Pcs)', 200)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Special(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹240</p>
+            <button class="btn" onclick="addToCart('Flower Pots Special(10 Pcs)', 240)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Asoka(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹300</p>
+            <button class="btn" onclick="addToCart('Flower Pots Asoka(10 Pcs)', 300)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Color Koti(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹480</p>
+            <button class="btn" onclick="addToCart('Flower Pots Color Koti(10 Pcs)', 480)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Color Koti Deluxe(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹720</p>
+            <button class="btn" onclick="addToCart('Flower Pots Color Koti Deluxe(10 Pcs)', 720)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>Flower Pots Special Deluxe(10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹900</p>
+            <button class="btn" onclick="addToCart('Flower Pots Special Deluxe(10 Pcs)', 900)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>1½" Twinkling Star (10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹60</p>
+            <button class="btn" onclick="addToCart('1½ Twinkling Star (10 Pcs)', 60)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/night4.jpg" alt="Diwali Show">
+            <h3>4" Twinkling Star (10 Pcs)
+            </h3>
+            <p>Combo set for full-night celebration</p>
+            <p class="price">₹150</p>
+            <button class="btn" onclick="addToCart('4 Twinkling Star (10 Pcs)', 150)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/babyrocket.jpg" alt="Baby Rocket (10 Pce)">
+            <h3>Baby Rocket (10 Pce)</h3>
+            <p>A fun, colorful rocket for every celebration!</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('Baby Rocket (10 Pce)', 120)">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="images/twosoundrocket.jpg" alt="Two Sound Rocket (10 Pce)">
+            <h3>Two Sound Rocket (10 Pce)</h3>
+            <p>Rockets with two different sound effects to surprise you!</p>
+            <p class="price">₹150</p>
+            <button class="btn" onclick="addToCart('Two Sound Rocket (10 Pce)', 150)">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="images/rocketbomb.jpg" alt="Rocket Bomb (10 Pce)">
+            <h3>Rocket Bomb (10 Pce)</h3>
+            <p>For the loudest bang in the sky!</p>
+            <p class="price">₹200</p>
+            <button class="btn" onclick="addToCart('Rocket Bomb (10 Pce)', 200)">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="images/musicalrocket.jpg" alt="Musical Rocket (5 Pce)">
+            <h3>Musical Rocket (5 Pce)</h3>
+            <p>Rockets that play music while soaring through the sky!</p>
+            <p class="price">₹180</p>
+            <button class="btn" onclick="addToCart('Musical Rocket (5 Pce)', 180)">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="images/lunikrocket.jpg" alt="Lunik Rocket (10 Pce)">
+            <h3>Lunik Rocket (10 Pce)</h3>
+            <p>A rocket that shines like the moon!</p>
+            <p class="price">₹160</p>
+            <button class="btn" onclick="addToCart('Lunik Rocket (10 Pce)', 160)">Add to Cart</button>
+        </div>
+        
+        
+    </div>
+
+    <div id="cart-summary">
+        <h3>Cart Summary</h3>
+        <ul id="cart-items"></ul>
+        <div id="total">Total: ₹0</div>
+        <button class="btn" onclick="placeOrder()">Place Order</button>
+        <button class="btn" onclick="showQRAndNotify()">Pay Now</button>
+    </div>
+
+    <div id="qrSection">
+        <h2>Scan to Pay via UPI</h2>
+        <canvas id="qr"></canvas>
+        <p><a id="upiLink" href="#" target="_blank" style="color:#ff99ff;">Open in UPI App</a></p>
+        <button class="btn" id="confirmPaymentBtn" style="display:none;" onclick="openWhatsApp()">Confirm
+            Payment</button>
+    </div>
+
+    <footer>
+        © 2025 BackBenchers Crackers | Night never sleeps with fire!
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Saravedi Crackers - BackBenchers Crackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #4a0072;
+            box-shadow: 0 0 20px #ff4081;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #ffe600;
+            text-shadow: 0 0 10px #ff4081;
+        }
+
+        .cracker-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .cracker {
+            background-color: #2c003e;
+            border-radius: 15px;
+            padding: 20px;
+            width: 260px;
+            box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cracker:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 64, 129, 0.7);
+        }
+
+        .cracker img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cracker h3 {
+            color: #ffc400;
+            margin-top: 10px;
+        }
+
+        .cracker p {
+            font-size: 14px;
+            color: #eee;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #ffeb3b;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background-color: #ff0066;
+        }
+
+        #cart-summary {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #cart-summary ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        #total {
+            font-size: 20px;
+            color: #fff44f;
+            margin: 10px 0;
+        }
+
+        #qrSection {
+            display: none;
+            margin-top: 30px;
+            background: #2e003e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255, 64, 129, 0.3);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background-color: #12002f;
+            text-align: center;
+            padding: 15px;
+            color: #bbb;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>💥 BB Crackers</h1>
+        <p>Unleash the ultimate Diwali thunder!</p>
+    </header>
+
+    <div class="cracker-grid">
+        <div class="cracker">
+            <img src="images/1000wala.jpg" alt="1000 Wala">
+            <h3>Atom Bomb (10 Pcs)
+            </h3>
+            <p>Non-stop thunder explosion</p>
+            <p class="price">₹350</p>
+            <button class="btn" onclick="addToCart('Atom Bomb (10 Pcs)', 350)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/5000wala.jpg" alt="5000 Wala">
+            <h3>Bullet Bomb (Big)(10 Pcs)</h3>
+            <p>Massive sound for big celebrations</p>
+            <p class="price">₹750</p>
+            <button class="btn" onclick="addToCart('Bullet Bomb (Big)(10 Pcs)', 750)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>Hydro Bomb (10 Pcs)            </h3>
+            <p>Classic & loud – a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('Hydro Bomb (10 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>Classic Bomb(10 Pcs)</h3>
+            <p>Classic & loud – a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('Classic Bomb(10 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>Digital Bomb (10 Pcs)</h3>
+            <p>Classic & loud - a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('Digital Bomb (10 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>2¾ Kuruvi (5 Pcs)</h3>
+            <p>Classic & loud - a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('2¾ Kuruvi (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>31 Lakshmi (5 Pcs)</h3>
+            <p>Classic & loud - a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('31 Lakshmi (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>4 Lakshmi (5 Pcs)</h3>
+            <p>Classic & loud – a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('4 Lakshmi (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>4 Deluxe Lakshmi (5 Pcs)</h3>
+            <p>Classic & loud – a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('4 Deluxe Lakshmi (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>4 Lakshmi Hulk (5 Pcs)</h3>
+            <p>Classic & loud – a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('4 Lakshmi Hulk (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>4 Lakshmi Gold (5 Pcs)</h3>
+            <p>Classic & loud – a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('4 Lakshmi Gold (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+        <div class="cracker">
+            <img src="images/lakshmi.jpg" alt="Lakshmi Bomb">
+            <h3>2 Sound (5 Pcs)</h3>
+            <p>Classic & loud - a must-have</p>
+            <p class="price">₹120</p>
+            <button class="btn" onclick="addToCart('2 Sound (5 Pcs)', 120)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div id="cart-summary">
+        <h3>🛒 Cart Summary</h3>
+        <ul id="cart-items"></ul>
+        <div id="total">Total: ₹0</div>
+        <button class="btn" onclick="placeOrder()">Place Order</button>
+        <button class="btn" onclick="showQRAndNotify()">Pay Now</button>
+    </div>
+
+    <div id="qrSection">
+        <h2>Scan to Pay</h2>
+        <canvas id="qr"></canvas>
+        <p><a id="upiLink" href="#" target="_blank" style="color:#ffeb3b;">Open in UPI App</a></p>
+        <button class="btn" id="confirmPaymentBtn" style="display:none;" onclick="openWhatsApp()">Confirm
+            Payment</button>
+    </div>
+
+    <footer>
+        © 2025 BackBenchers Crackers | Celebrate with Saravedi!
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
